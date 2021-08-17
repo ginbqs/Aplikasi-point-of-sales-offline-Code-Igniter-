@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class CashiersDetail extends Migration
+{
+	public function up()
+	{
+		$this->forge->addField([
+			'id'          => [
+				'type'           => 'INT',
+				'constraint'     => 11,
+				'unsigned'       => true,
+				'auto_increment' => true
+			],
+			'cashier_id'       => [
+				'type'           => 'INT',
+				'unsigned' 		 => TRUE,
+			],
+			'product_id'       => [
+				'type'           => 'INT',
+				'unsigned' 		 => TRUE,
+			],
+			'qty'       => [
+				'type'           => 'INT',
+				'constraint'     => '11'
+			],
+			'price'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			],
+			'subtotal'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			]
+		]);
+		// Membuat primary key
+		$this->forge->addKey('id', TRUE);
+
+		$this->forge->addForeignKey('product_id', 'm_products', 'id');
+		$this->forge->addForeignKey('cashier_id', 't_cashier', 'id');
+
+		// Membuat tabel news
+		$this->forge->createTable('t_cashier_detail');
+	}
+
+	public function down()
+	{
+		// menghapus tabel t_cashier_detail
+		$this->forge->dropTable('t_cashier_detail');
+	}
+}
