@@ -8,14 +8,14 @@
 	    <!-- small box -->
 	    <div class="small-box bg-info">
 	      <div class="inner">
-	        <h3>150</h3>
+	        <h3 id="label_dashboard_cashiers_temp">0</h3>
 
-	        <p>New Orders</p>
+	        <p>Kasir</p>
 	      </div>
 	      <div class="icon">
-	        <i class="ion ion-bag"></i>
+	        <i class="fas fa-cash-register"></i>
 	      </div>
-	      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	      <a href="<?php echo site_url('admin/cashiers') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	    </div>
 	  </div>
 	  <!-- ./col -->
@@ -23,14 +23,14 @@
 	    <!-- small box -->
 	    <div class="small-box bg-success">
 	      <div class="inner">
-	        <h3>53<sup style="font-size: 20px">%</sup></h3>
+	        <h3 id="label_dashboard_cashiers">0<sup style="font-size: 20px"></sup></h3>
 
-	        <p>Bounce Rate</p>
+	        <p>Riwayat Penjualan Perbulan</p>
 	      </div>
 	      <div class="icon">
-	        <i class="ion ion-stats-bars"></i>
+	        <i class="fas fa-book"></i>
 	      </div>
-	      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	      <a href="<?php echo site_url('admin/history') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	    </div>
 	  </div>
 	  <!-- ./col -->
@@ -38,14 +38,14 @@
 	    <!-- small box -->
 	    <div class="small-box bg-warning">
 	      <div class="inner">
-	        <h3>44</h3>
+	        <h3  id="label_dashboard_products">0</h3>
 
-	        <p>User Registrations</p>
+	        <p>Produk</p>
 	      </div>
 	      <div class="icon">
-	        <i class="ion ion-person-add"></i>
+	        <i class="far fa-list-alt"></i>
 	      </div>
-	      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	      <a href="<?php echo site_url('admin/master_data/products') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	    </div>
 	  </div>
 	  <!-- ./col -->
@@ -53,14 +53,14 @@
 	    <!-- small box -->
 	    <div class="small-box bg-danger">
 	      <div class="inner">
-	        <h3>65</h3>
+	        <h3  id="label_dashboard_units">0</h3>
 
-	        <p>Unique Visitors</p>
+	        <p>Satuan</p>
 	      </div>
 	      <div class="icon">
-	        <i class="ion ion-pie-graph"></i>
+	        <i class="far fa-bookmark"></i>
 	      </div>
-	      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+	      <a href="<?php echo site_url('admin/master_data/units') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
 	    </div>
 	  </div>
 	  <!-- ./col -->
@@ -69,340 +69,32 @@
 	<!-- Main row -->
 	<div class="row">
 	  <!-- Left col -->
-	  <section class="col-lg-7 connectedSortable">
+	  <section class="col-lg-12 connectedSortable">
 	    
 
 	    <!-- DIRECT CHAT -->
-	    <div class="card direct-chat direct-chat-primary">
-	      <div class="card-header">
-	        <h3 class="card-title">Direct Chat</h3>
+		<div class="card bg-gradient-info">
+		  <div class="card-header border-0">
+		    <h3 class="card-title">
+		      <i class="fas fa-th mr-1"></i>
+		      Grafik Penjualan
+		    </h3>
 
-	        <div class="card-tools">
-	          <span title="3 New Messages" class="badge badge-primary">3</span>
-	          <button type="button" class="btn btn-tool" data-card-widget="collapse">
-	            <i class="fas fa-minus"></i>
-	          </button>
-	          <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
-	            <i class="fas fa-comments"></i>
-	          </button>
-	          <button type="button" class="btn btn-tool" data-card-widget="remove">
-	            <i class="fas fa-times"></i>
-	          </button>
-	        </div>
-	      </div>
-	      <!-- /.card-header -->
-	      <div class="card-body">
-	        <!-- Conversations are loaded here -->
-	        <div class="direct-chat-messages">
-	          <!-- Message. Default to the left -->
-	          <div class="direct-chat-msg">
-	            <div class="direct-chat-infos clearfix">
-	              <span class="direct-chat-name float-left">Alexander Pierce</span>
-	              <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-	            </div>
-	            <!-- /.direct-chat-infos -->
-	            <img class="direct-chat-img" src="<?php echo base_url('adminlte/dist/img/user1-128x128.jpg') ?>" alt="message user image">
-	            <!-- /.direct-chat-img -->
-	            <div class="direct-chat-text">
-	              Is this template really for free? That's unbelievable!
-	            </div>
-	            <!-- /.direct-chat-text -->
-	          </div>
-	          <!-- /.direct-chat-msg -->
-
-	          <!-- Message to the right -->
-	          <div class="direct-chat-msg right">
-	            <div class="direct-chat-infos clearfix">
-	              <span class="direct-chat-name float-right">Sarah Bullock</span>
-	              <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-	            </div>
-	            <!-- /.direct-chat-infos -->
-	            <img class="direct-chat-img" src="<?php echo base_url('adminlte/dist/img/user3-128x128.jpg') ?>" alt="message user image">
-	            <!-- /.direct-chat-img -->
-	            <div class="direct-chat-text">
-	              You better believe it!
-	            </div>
-	            <!-- /.direct-chat-text -->
-	          </div>
-	          <!-- /.direct-chat-msg -->
-
-	          <!-- Message. Default to the left -->
-	          <div class="direct-chat-msg">
-	            <div class="direct-chat-infos clearfix">
-	              <span class="direct-chat-name float-left">Alexander Pierce</span>
-	              <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-	            </div>
-	            <!-- /.direct-chat-infos -->
-	            <img class="direct-chat-img" src="<?php echo base_url('adminlte/dist/img/user1-128x128.jpg') ?>" alt="message user image">
-	            <!-- /.direct-chat-img -->
-	            <div class="direct-chat-text">
-	              Working with AdminLTE on a great new app! Wanna join?
-	            </div>
-	            <!-- /.direct-chat-text -->
-	          </div>
-	          <!-- /.direct-chat-msg -->
-
-	          <!-- Message to the right -->
-	          <div class="direct-chat-msg right">
-	            <div class="direct-chat-infos clearfix">
-	              <span class="direct-chat-name float-right">Sarah Bullock</span>
-	              <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-	            </div>
-	            <!-- /.direct-chat-infos -->
-	            <img class="direct-chat-img" src="<?php echo base_url('adminlte/dist/img/user3-128x128.jpg') ?>" alt="message user image">
-	            <!-- /.direct-chat-img -->
-	            <div class="direct-chat-text">
-	              I would love to.
-	            </div>
-	            <!-- /.direct-chat-text -->
-	          </div>
-	          <!-- /.direct-chat-msg -->
-
-	        </div>
-	        <!--/.direct-chat-messages-->
-
-	        <!-- Contacts are loaded here -->
-	        <div class="direct-chat-contacts">
-	          <ul class="contacts-list">
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user1-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    Count Dracula
-	                    <small class="contacts-list-date float-right">2/28/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">How have you been? I was...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user7-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    Sarah Doe
-	                    <small class="contacts-list-date float-right">2/23/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">I will be waiting for...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user3-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    Nadia Jolie
-	                    <small class="contacts-list-date float-right">2/20/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">I'll call you back at...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user5-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    Nora S. Vans
-	                    <small class="contacts-list-date float-right">2/10/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">Where is your new...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user6-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    John K.
-	                    <small class="contacts-list-date float-right">1/27/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">Can I take a look at...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	            <li>
-	              <a href="#">
-	                <img class="contacts-list-img" src="<?php echo base_url('adminlte/dist/img/user8-128x128.jpg') ?>" alt="User Avatar">
-
-	                <div class="contacts-list-info">
-	                  <span class="contacts-list-name">
-	                    Kenneth M.
-	                    <small class="contacts-list-date float-right">1/4/2015</small>
-	                  </span>
-	                  <span class="contacts-list-msg">Never mind I found...</span>
-	                </div>
-	                <!-- /.contacts-list-info -->
-	              </a>
-	            </li>
-	            <!-- End Contact Item -->
-	          </ul>
-	          <!-- /.contacts-list -->
-	        </div>
-	        <!-- /.direct-chat-pane -->
-	      </div>
-	      <!-- /.card-body -->
-	      <div class="card-footer">
-	        <form action="#" method="post">
-	          <div class="input-group">
-	            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-	            <span class="input-group-append">
-	              <button type="button" class="btn btn-primary">Send</button>
-	            </span>
-	          </div>
-	        </form>
-	      </div>
-	      <!-- /.card-footer-->
-	    </div>
-	    <!--/.direct-chat -->
-
-	    <!-- TO DO List -->
-	    <div class="card">
-	      <div class="card-header">
-	        <h3 class="card-title">
-	          <i class="ion ion-clipboard mr-1"></i>
-	          To Do List
-	        </h3>
-
-	        <div class="card-tools">
-	          <ul class="pagination pagination-sm">
-	            <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
-	            <li class="page-item"><a href="#" class="page-link">1</a></li>
-	            <li class="page-item"><a href="#" class="page-link">2</a></li>
-	            <li class="page-item"><a href="#" class="page-link">3</a></li>
-	            <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	      <!-- /.card-header -->
-	      <div class="card-body">
-	        <ul class="todo-list" data-widget="todo-list">
-	          <li>
-	            <!-- drag handle -->
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <!-- checkbox -->
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo1" id="todoCheck1">
-	              <label for="todoCheck1"></label>
-	            </div>
-	            <!-- todo text -->
-	            <span class="text">Design a nice theme</span>
-	            <!-- Emphasis label -->
-	            <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
-	            <!-- General tools such as edit or delete-->
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	          <li>
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
-	              <label for="todoCheck2"></label>
-	            </div>
-	            <span class="text">Make the theme responsive</span>
-	            <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	          <li>
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo3" id="todoCheck3">
-	              <label for="todoCheck3"></label>
-	            </div>
-	            <span class="text">Let theme shine like a star</span>
-	            <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	          <li>
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo4" id="todoCheck4">
-	              <label for="todoCheck4"></label>
-	            </div>
-	            <span class="text">Let theme shine like a star</span>
-	            <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	          <li>
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo5" id="todoCheck5">
-	              <label for="todoCheck5"></label>
-	            </div>
-	            <span class="text">Check your messages and notifications</span>
-	            <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	          <li>
-	            <span class="handle">
-	              <i class="fas fa-ellipsis-v"></i>
-	              <i class="fas fa-ellipsis-v"></i>
-	            </span>
-	            <div  class="icheck-primary d-inline ml-2">
-	              <input type="checkbox" value="" name="todo6" id="todoCheck6">
-	              <label for="todoCheck6"></label>
-	            </div>
-	            <span class="text">Let theme shine like a star</span>
-	            <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
-	            <div class="tools">
-	              <i class="fas fa-edit"></i>
-	              <i class="fas fa-trash-o"></i>
-	            </div>
-	          </li>
-	        </ul>
-	      </div>
-	      <!-- /.card-body -->
-	      <div class="card-footer clearfix">
-	        <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
-	      </div>
-	    </div>
+		    <div class="card-tools">
+		      <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+		        <i class="fas fa-minus"></i>
+		      </button>
+		      <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+		        <i class="fas fa-times"></i>
+		      </button>
+		    </div>
+		  </div>
+		  <div class="card-body">
+		    <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 400px; max-width: 100%;"></canvas>
+		  </div>
+		  <!-- /.card-body -->
+		  <!-- /.card-footer -->
+		</div>
 	    <!-- /.card -->
 	  </section>
 	  <!-- /.Left col -->
@@ -416,5 +108,92 @@
 	<!-- /.row (main row) -->
 	</div><!-- /.container-fluid -->
 
+<script type="text/javascript">
+$(document).ready(function() {
+	getTotalDashboard();	
+	getChart();
+})
 
+function getChart(){
+	$.get("<?php echo base_url('admin/dashboard/getChart')?>",function(response){
+		const res = JSON.parse(response)		
+		if(res.message){
+			console.log(res.message)
+			var chartColors = {
+			  red: 'rgb(255, 99, 132)',
+			  orange: 'rgb(255, 159, 64)',
+			  yellow: 'rgb(255, 205, 86)',
+			  green: 'rgb(75, 192, 192)',
+			  blue: 'rgb(54, 162, 235)',
+			  purple: 'rgb(153, 102, 255)',
+			  grey: 'rgb(231,233,237)'
+			};
+			var randomScalingFactor = function() {
+			  return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+			}
+			var tanggal = [];
+			var nilai = [];
+			for(i=1;i<=30;i++){
+				tanggal.push(i)
+				nilai.push(randomScalingFactor())
+			}
+
+			var config = {
+			  type: 'line',
+			  data: {
+			    labels: res.message.tanggal,
+			    datasets: [{
+			      label: "Penjualan Bulan <?php echo date('M Y')?>",
+			      backgroundColor: chartColors.red,
+			      borderColor: chartColors.red,
+			      data: res.message.nilai,
+			      fill: false,
+			    }]
+			  },
+			  options: {
+			    responsive: true,
+			    tooltips: {
+			      mode: 'label',
+			    },
+			    hover: {
+			      mode: 'nearest',
+			      intersect: true
+			    },
+			    scales: {
+			      xAxes: [{
+			        display: true,
+			        scaleLabel: {
+			          display: true,
+			          labelString: 'Month'
+			        }
+			      }],
+			      yAxes: [{
+			        display: true,
+			        scaleLabel: {
+			          display: true,
+			          labelString: 'Value'
+			        }
+			      }]
+			    }
+			  }
+			};
+
+
+			var ctx = document.getElementById("line-chart").getContext("2d");
+			window.myLine = new Chart(ctx, config);
+		}
+	})
+}
+function getTotalDashboard(){
+	$.get("<?php echo base_url('admin/dashboard/getTotalDashboard')?>",function(response){
+		const res = JSON.parse(response)
+		if(res.status){
+			$("#label_dashboard_products").html(res.message.totalProducts)
+			$("#label_dashboard_units").html(res.message.totalUnits)
+			$("#label_dashboard_cashiers_temp").html(res.message.totalCashiersTemp)
+			$("#label_dashboard_cashiers").html(res.message.totalCashiers)
+		}	
+	})
+}
+</script>
 <?= $this->endSection() ?>

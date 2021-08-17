@@ -2,11 +2,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Dashboard</h1>
+          <?php $uri = service('uri'); 
+          ?>
+        <h1 class="m-0"><?php echo count($uri->getSegments())-1 > 0  ? ucwords($uri->getSegments()[count($uri->getSegments())-1]) :'Dashboard';?></h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <?php $uri = service('uri'); ?>
           <?php foreach ( $uri->getSegments() as $segment): ?>
           <?php 
             $url = substr($uri->getPath(), 0, strpos($uri->getPath(), $segment)) . $segment;

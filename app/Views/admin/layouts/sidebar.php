@@ -6,7 +6,7 @@
       <img src="<?php echo base_url('adminlte/dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
     </div>
     <div class="info">
-      <a href="#" class="d-block">Fahd Warung</a>
+      <a href="#" class="d-block">next-in</a>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
         <a href="<?php echo site_url('admin/history') ?>" class="nav-link <?php echo $uri->getPath() == 'admin/history' ? 'active': '' ?>">
           <i class="nav-icon fas fa-book"></i>
           <p>
-            Riwayat Pembelian
+            Riwayat Penjualan
           </p>
         </a>
       </li>

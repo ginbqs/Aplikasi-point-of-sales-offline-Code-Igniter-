@@ -109,4 +109,11 @@ class ProductsModel extends Model
         $query = $this->builder->get();
         return $query->getRow();
     }
+    public function getTotalProducts()
+    {
+        $this->builder = $this->db->table($this->table);
+        $this->builder->select('count(id) as total');
+        $query = $this->builder->get();
+        return $query->getRow();
+    }
 }

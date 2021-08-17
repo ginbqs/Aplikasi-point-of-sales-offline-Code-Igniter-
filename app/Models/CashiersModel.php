@@ -97,4 +97,21 @@ class CashiersModel extends Model
         $query = $this->builder->get();
         return $query->getRow();
     }
+    public function getTotalCashiers(){
+        $this->builder = $this->db->table('t_cashier_detail');
+        $this->builder->selectSum('t_cashier_detail.subtotal');
+        $this->builder->join('t_cashier','t_cashier.id = t_cashier_detail.cashier_id','inner');
+        $this->builder->like('t_cashier.invoice',date("Ym"),'after');
+        $query = $this->builder->get();
+        return $query->getRow();
+    }
+    public function getChart(){
+        $this->builder = $this->db->table('t_cashier_detail');
+        $this->builder->select('sum(t_cashier_detail.subtotal) as total, substring(t_cashier.invoice,1,6) as bulan');
+        $this->builder->join('t_cashier','t_cashier.id = t_cashier_detail.cashier_id','inner');
+        $this->builder->like('t_cashier.invoice',date("Y"),'after');
+        $this->builder->groupBy('bulan');
+        $query = $this->builder->get();
+        return $query->getResult();
+    }
 }

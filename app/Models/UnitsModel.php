@@ -112,5 +112,12 @@ class UnitsModel extends Model
         $query = $this->builder->get();
         return $query->getResult();
     }
+    public function getTotalUnits()
+    {
+        $this->builder = $this->db->table($this->table);
+        $this->builder->select('count(id) as total');
+        $query = $this->builder->get();
+        return $query->getRow();
+    }
 
 }

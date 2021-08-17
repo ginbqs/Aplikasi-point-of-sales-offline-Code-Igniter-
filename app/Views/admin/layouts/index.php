@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>next-In | WarungKu</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -30,7 +30,6 @@
 
   	<!-- jQuery -->
   <script src="<?php echo base_url('adminlte/plugins/jquery/jquery.min.js') ?>"></script>
-	<!-- <script src="<?php echo base_url('jquery-3.6.0.min.js') ?>"></script> -->
 
 	<!-- jQuery UI 1.11.4 -->
 	<script src="<?php echo base_url('adminlte/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
@@ -53,6 +52,12 @@
   <link rel="stylesheet" href="<?php echo base_url('adminlte/plugins/toastr/toastr.min.css') ?>">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="<?php echo base_url('adminlte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') ?>">
+
+  <!-- ChartJS -->
+  <script src="<?php echo base_url('adminlte/plugins/chart.js/Chart.min.js') ?>"></script>
+  <!-- Sparkline -->
+  <script src="<?php echo base_url('adminlte/plugins/sparklines/sparkline.js') ?>"></script>
+  <!-- jQuery Knob Chart -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -70,9 +75,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <img src="<?php echo base_url('adminlte/dist/img/AdminLTELogo.png') ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">WarungKu</span>
     </a>
 
     <!-- Sidebar -->
@@ -108,11 +113,6 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- ChartJS -->
-<script src="<?php echo base_url('adminlte/plugins/chart.js/Chart.min.js') ?>"></script>
-<!-- Sparkline -->
-<script src="<?php echo base_url('adminlte/plugins/sparklines/sparkline.js') ?>"></script>
-<!-- jQuery Knob Chart -->
 <script src="<?php echo base_url('adminlte/plugins/jquery-knob/jquery.knob.min.js') ?>"></script>
 <!-- daterangepicker -->
 <script src="<?php echo base_url('adminlte/plugins/moment/moment.min.js') ?>"></script>
@@ -127,7 +127,6 @@
 <script src="<?php echo base_url('adminlte/dist/js/adminlte.js') ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('adminlte/dist/js/demo.js') ?>"></script>
-
 <!-- Toastr -->
 <script src="<?php echo base_url('adminlte/plugins/toastr/toastr.min.js') ?>"></script>
 <!-- SweetAlert2 -->
