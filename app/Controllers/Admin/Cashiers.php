@@ -23,8 +23,8 @@ class Cashiers extends BaseController
         $data = array();
         foreach ($list as $lists) {
             $row    = array();
-            $row[] = $lists->name.'<br />'.$lists->desc;
-            $row[] = number_format($lists->price,2).' /'.$lists->m_units_name;
+            $row[] = $lists->name.'<br /><span style="font-size:14px;font-weight:bold">'.$lists->desc.'</span>';
+            $row[] = number_format($lists->price,2).' /'.$lists->m_units_name.'<br /><span style="font-size:14px;font-weight:bold">'.number_format($lists->original_price,2).'</span>';;
             $row[] = "<div class='row'>
 	            			<div class='col-md-6'>
 	            				<button class='btn btn-block btn-warning' onclick='cartProducts(".$lists->id.")'><i class='fa fa-edit'></i></button>
@@ -77,10 +77,12 @@ class Cashiers extends BaseController
             }
 
             if(isset($getCashierTemp)){
-            	$qty = $getCashierTemp->qty + $request->getPost('input_qty');
+            	$qty = (isset($getCashierTemp->qty) ? $getCashierTemp->qty : 0) + $request->getPost('input_qty');
 				$data = array(
 	                'qty' 			=> $qty,
-	                'price'  		=> $getProduct->price,
+                    'original_price' => $getProduct->original_price,
+                    'price'         => $getProduct->price,
+                    'original_subtotal'      => $qty*$getProduct->original_price,
 	                'subtotal'		=> $qty*$getProduct->price,
 	            );
 				$insert = $CashiersTempModel->update($getCashierTemp->id,$data);
@@ -88,7 +90,9 @@ class Cashiers extends BaseController
             	$data = array(
 	                'product_id'  	=> $request->getPost('input_id'),
 	                'qty' 			=> $request->getPost('input_qty'),
+                    'original_price'=> $getProduct->original_price,
 	                'price'  		=> $getProduct->price,
+                    'original_subtotal'    => $request->getPost('input_qty')*$getProduct->original_price,
 	                'subtotal'		=> $request->getPost('input_qty')*$getProduct->price,
 	            );
 				$insert = $CashiersTempModel->insert($data);
@@ -105,7 +109,7 @@ class Cashiers extends BaseController
         $data = array();
         foreach ($list as $lists) {
             $row    = array();
-            $row[] = '<span style="font-weight:bold">'.$lists->qty.'</span>'.'&nbsp;&nbsp;&nbsp;'.$lists->name.'<br />Rp. '.number_format($lists->price,2).' /'.$lists->m_units_name;
+            $row[] = '<span style="font-weight:bold">'.$lists->qty.'</span>'.'&nbsp;&nbsp;&nbsp;'.$lists->name.'<br /><span style="font-size:14px;font-weight:bold">Rp. '.number_format($lists->price,2).' /'.$lists->m_units_name.'</span>';
             $row[] = number_format($lists->subtotal,2);
             $row[] = "<button class='btn btn-block btn-danger' onclick='DeletecartProducts(".$lists->id.")'><i class='fa fa-trash'></i></button>";
             $data[] = $row;

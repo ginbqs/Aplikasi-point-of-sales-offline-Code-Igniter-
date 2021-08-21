@@ -20,6 +20,7 @@
                       <th>Total</th>
                       <th>Pembayaran</th>
                       <th>Kembalian</th>
+                      <th>Keuntungan</th>
                       <th>Aksi</th>
                   </tr>
               </thead>
@@ -33,6 +34,7 @@
                       <th>Total</th>
                       <th>Pembayaran</th>
                       <th>Kembalian</th>
+                      <th>Keuntungan</th>
                       <th>Aksi</th>
                   </tr>
               </tfoot>

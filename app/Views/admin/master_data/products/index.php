@@ -17,7 +17,8 @@
                   <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Harga</th>
+                      <th>Harga Asal</th>
+                      <th>Harga Jual</th>
                       <th>Deskripsi</th>
                       <th>Aksi</th>
                   </tr>
@@ -28,7 +29,8 @@
                   <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Harga</th>
+                      <th>Harga Asal</th>
+                      <th>Harga Jual</th>
                       <th>Deskripsi</th>
                       <th>Aksi</th>
                   </tr>
@@ -78,7 +80,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Harga</label>
+                            <label class="control-label">Harga Asal</label>
+                            <input id="input_original_price" placeholder="Harga" class="form-control" type="number" step="any">
+                            <span id="input_original_price-error" class="error invalid-feedback"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Harga Jual</label>
                             <input id="input_price" placeholder="Harga" class="form-control" type="number" step="any">
                             <span id="input_price-error" class="error invalid-feedback"></span>
                         </div>
@@ -171,6 +178,7 @@ function editProducts(id)
             $("#input_id").val(data.id)
             $("#input_name").val(data.name)
             $("#input_unit_id").val(data.unit_id)
+            $("#input_original_price").val(data.original_price)
             $("#input_price").val(data.price)
             $("#input_desc").val(data.desc)
         }else{
@@ -230,6 +238,7 @@ function save()
         'input_id'      : $("#input_id").val(),
         'input_name'    : $("#input_name").val(),
         'input_unit_id' : $("#input_unit_id").val(),
+        'input_original_price'   : $("#input_original_price").val(),
         'input_price'   : $("#input_price").val(),
         'input_desc'    : $("#input_desc").val()
     }

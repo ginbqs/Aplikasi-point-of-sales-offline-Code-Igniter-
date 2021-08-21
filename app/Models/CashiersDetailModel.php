@@ -10,11 +10,11 @@ class CashiersDetailModel extends Model
     protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['product_id','qty','price','subtotal'];
+    protected $allowedFields = ['product_id','qty','original_price','price','original_subtotal','subtotal'];
 
-    protected $column_order = [NULL,'product_id','qty','price','subtotal'] ;
-    protected $column_select = ['m_products.name','m_units.name as m_units_name','t_cashier_detail.id','t_cashier_detail.product_id','t_cashier_detail.qty','t_cashier_detail.price','t_cashier_detail.subtotal'];
-    protected $column_search = ['m_products.name','m_units.name','t_cashier_detail.product_id','t_cashier_detail.qty','t_cashier_detail.price','t_cashier_detail.subtotal'];
+    protected $column_order = [NULL,'product_id','qty','original_price','price','original_subtotal','subtotal'] ;
+    protected $column_select = ['m_products.name','m_units.name as m_units_name','t_cashier_detail.id','t_cashier_detail.product_id','t_cashier_detail.qty','t_cashier_detail.original_price','t_cashier_detail.price','t_cashier_detail.original_subtotal','t_cashier_detail.subtotal'];
+    protected $column_search = ['m_products.name','m_units.name','t_cashier_detail.product_id','t_cashier_detail.qty','t_cashier_detail.original_price','t_cashier_detail.price','t_cashier_detail.original_subtotal','t_cashier_detail.subtotal'];
     protected $order = ['m_products.name' => 'ASC'];
 
     public $db;

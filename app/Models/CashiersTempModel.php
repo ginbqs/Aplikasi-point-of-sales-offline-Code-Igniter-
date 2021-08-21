@@ -13,7 +13,7 @@ class CashiersTempModel extends Model
 
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['product_id', 'qty','price','subtotal'];
+    protected $allowedFields = ['product_id', 'qty','original_price','price','original_subtotal','subtotal'];
     protected $useTimestamps = false;
 
     protected $column_order = [NULL,'m_products.name','m_units.name','t_cashier_temp.product_id','t_cashier_temp.qty','t_cashier_temp.price','t_cashier_temp.subtotal'] ;
@@ -105,7 +105,7 @@ class CashiersTempModel extends Model
     }
     public function getTotalCart(){
         $this->builder = $this->db->table($this->table);
-        $this->builder->selectSum('subtotal');
+        $this->builder->select('sum(subtotal) subtotal,sum(original_subtotal) original_subtotal');
         $query = $this->builder->get();
         return $query->getRow();
     }
@@ -117,7 +117,8 @@ class CashiersTempModel extends Model
     		$getTotal = $this->getTotalCart();
 	    	$data = array(
 	            'invoice' 		=> date('YmdHis'),
-	            'total'  		=> $getTotal->subtotal,
+                'original_total'=> $getTotal->original_subtotal,
+                'total'         => $getTotal->subtotal,
 	            'pay'			=> $request->getPost("input_pay"),
 	            'changes'		=> $request->getPost("input_pay") - $getTotal->subtotal,
 	        );
@@ -125,7 +126,7 @@ class CashiersTempModel extends Model
 
 
 			$CashiersModel_id = $CashiersModel->getInsertID();
-			$this->db->query('insert into t_cashier_detail (cashier_id,product_id,qty,price,subtotal) select '.$CashiersModel_id.',product_id,qty,price,subtotal from t_cashier_temp');
+			$this->db->query('insert into t_cashier_detail (cashier_id,product_id,qty,original_price,price,original_subtotal,subtotal) select '.$CashiersModel_id.',product_id,qty,original_price,price,original_subtotal,subtotal from t_cashier_temp');
 
 			$this->builder = $this->db->table($this->table);
     		$this->builder->truncate();

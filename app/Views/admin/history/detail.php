@@ -39,6 +39,10 @@
                             <label class="control-label">Kembalian</label>
                             <div><?php echo number_format($dt_cashier->changes,2)?></div>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label">Keuntungan</label>
+                            <div><?php echo number_format($dt_cashier->total - $dt_cashier->original_total,2)?></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,9 +55,12 @@
                   <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Harga</th>
                       <th>Jumlah</th>
-                      <th>Subtotal</th>
+                      <th>Harga Asal</th>
+                      <th>Subtotal Asal</th>
+                      <th>Harga Penjualan</th>
+                      <th>Subtotal Penjualan</th>
+                      <th>Keuntungan</th>
                   </tr>
               </thead>
               <tbody>
@@ -62,9 +69,12 @@
                   <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Harga</th>
                       <th>Jumlah</th>
-                      <th>Subtotal</th>
+                      <th>Harga Asal</th>
+                      <th>Subtotal Asal</th>
+                      <th>Harga Penjualan</th>
+                      <th>Subtotal Penjualan</th>
+                      <th>Keuntungan</th>
                   </tr>
               </tfoot>
             </table>

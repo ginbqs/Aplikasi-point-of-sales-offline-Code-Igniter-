@@ -15,7 +15,7 @@ class ProductsModel extends Model
     protected $useSoftDeletes = true;
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['name', 'price','desc','unit_id'];
+    protected $allowedFields = ['name', 'original_price','price','desc','unit_id'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -23,9 +23,9 @@ class ProductsModel extends Model
 
     protected $skipValidation  = false;
 
-    protected $column_order = [NULL,'m_products.name','m_units.name','m_products.price','m_products.desc'] ;
-    protected $column_select = ['m_products.id','m_products.name','m_units.name as m_units_name','m_products.price','m_products.desc'];
-    protected $column_search = ['m_products.id','m_products.name','m_units.name','m_products.price','m_products.desc'];
+    protected $column_order = [NULL,'m_products.name','m_units.name','m_products.original_price','m_products.price','m_products.desc'] ;
+    protected $column_select = ['m_products.id','m_products.name','m_units.name as m_units_name','m_products.original_price','m_products.price','m_products.desc'];
+    protected $column_search = ['m_products.id','m_products.name','m_units.name','m_products.original_price','m_products.price','m_products.desc'];
     protected $order = ['m_products.name' => 'ASC'];
 
     public $db;

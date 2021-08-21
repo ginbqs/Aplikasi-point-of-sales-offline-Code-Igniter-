@@ -19,6 +19,10 @@ class Products extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
+			'original_price'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			],
 			'price'      => [
 				'type'           => 'double',
 				'default'        => 0,

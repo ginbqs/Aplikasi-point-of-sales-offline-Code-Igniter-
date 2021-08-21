@@ -23,7 +23,15 @@ class CashieTemp extends Migration
 				'type'           => 'INT',
 				'constraint'     => '11'
 			],
+			'original_price'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			],
 			'price'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			],
+			'original_subtotal'      => [
 				'type'           => 'double',
 				'default'        => 0,
 			],

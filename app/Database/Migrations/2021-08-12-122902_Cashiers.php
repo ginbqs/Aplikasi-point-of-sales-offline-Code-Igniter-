@@ -19,6 +19,10 @@ class Cashiers extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '255'
 			],
+			'original_total'      => [
+				'type'           => 'double',
+				'default'        => 0,
+			],
 			'total'      => [
 				'type'           => 'double',
 				'default'        => 0,

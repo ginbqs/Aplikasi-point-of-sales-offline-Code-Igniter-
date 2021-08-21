@@ -32,6 +32,7 @@ class Products extends BaseController
             $row    = array();
             $row[] = $no;
             $row[] = $lists->name;
+            $row[] = number_format($lists->original_price,2).' /'.$lists->m_units_name;
             $row[] = number_format($lists->price,2).' /'.$lists->m_units_name;
             $row[] = $lists->desc;
             $row[] = "<button class='btn btn-success' onclick='editProducts(".$lists->id.")'><i class='fa fa-edit'></i></button> <button class='btn btn-danger' onclick='deleteProducts(".$lists->id.")'><i class='fa fa-trash'></i></button>";
@@ -85,6 +86,7 @@ class Products extends BaseController
 
             $data = array(
                 'name'  => $request->getPost('input_name'),
+                'original_price' => empty($request->getPost('input_original_price')) ? 0 : $request->getPost('input_original_price'),
                 'price' => $request->getPost('input_price'),
                 'desc'  => $request->getPost('input_desc'),
                 'unit_id'=> $request->getPost('input_unit_id'),
@@ -140,6 +142,7 @@ class Products extends BaseController
 
             $data = array(
                 'name'  => $request->getPost('input_name'),
+                'original_price' => empty($request->getPost('input_original_price')) ? 0 : $request->getPost('input_original_price'),
                 'price' => $request->getPost('input_price'),
                 'desc'  => $request->getPost('input_desc'),
                 'unit_id'=> $request->getPost('input_unit_id'),

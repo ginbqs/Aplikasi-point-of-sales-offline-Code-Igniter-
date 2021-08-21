@@ -30,6 +30,7 @@ class History extends BaseController
             $row[] = number_format($lists->total,2);
             $row[] = number_format($lists->pay,2);
             $row[] = number_format($lists->changes,2);
+            $row[] = number_format($lists->total - $lists->original_total,2);
             $row[] = "<a href=".site_url('admin/history/show/'.$lists->id)."><button class='btn btn-success'><i class='fa fa-eye'></i></button></a> <button class='btn btn-danger' onclick='deleteHistory(".$lists->id.")'><i class='fa fa-trash'></i></button>";
             $data[] = $row;
         }
@@ -71,10 +72,12 @@ class History extends BaseController
             $row    = array();
             $row[] = $no;
             $row[] = $lists->name;
-            $row[] = number_format($lists->price,2);
             $row[] = $lists->qty;
+            $row[] = number_format($lists->original_price,2);
+            $row[] = number_format($lists->original_subtotal,2);
+            $row[] = number_format($lists->price,2);
             $row[] = number_format($lists->subtotal,2);
-            $row[] = "<a href=".site_url('admin/history/show/'.$lists->id)."><button class='btn btn-success'><i class='fa fa-eye'></i></button></a> <button class='btn btn-danger' onclick='deleteHistory(".$lists->id.")'><i class='fa fa-trash'></i></button>";
+            $row[] = number_format($lists->subtotal - $lists->original_subtotal,2);
             $data[] = $row;
         }
         // 

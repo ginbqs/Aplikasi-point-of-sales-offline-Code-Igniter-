@@ -12,7 +12,7 @@ class CashiersModel extends Model
     protected $useSoftDeletes = true;
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['invoice', 'total','pay','changes'];
+    protected $allowedFields = ['invoice','original_total', 'total','pay','changes'];
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -20,9 +20,9 @@ class CashiersModel extends Model
 
     protected $skipValidation  = false;
 
-    protected $column_order = [NULL,'invoice', 'total','pay','changes'] ;
-    protected $column_select = ['id','invoice', 'total','pay','changes'];
-    protected $column_search = ['id','invoice', 'total','pay','changes'];
+    protected $column_order = [NULL,'invoice','original_total', 'total','pay','changes'] ;
+    protected $column_select = ['id','invoice','original_total', 'total','pay','changes'];
+    protected $column_search = ['id','invoice','original_total', 'total','pay','changes'];
     protected $order = ['invoice' => 'DESC'];
 
     public $db;
