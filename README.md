@@ -1,4 +1,4 @@
-## About warungKu
+## Tentang warungKu
 
 WARUNGKU adalah aplikasi gratis untuk pencatatan penjualan sederhana. Anda bisa mencatatat barang beserta harganya. Selain itu Anda bisa melakukan penjualan melalui menu kasir.
 
