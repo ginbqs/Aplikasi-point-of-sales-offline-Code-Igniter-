@@ -12,7 +12,7 @@ class Cashiers extends BaseController
 {
 	public function index()
 	{
-		return view('admin/cashiers/index');
+		return view('admin/Cashiers/index');
 	}
     
     public function jsonProduct(){
